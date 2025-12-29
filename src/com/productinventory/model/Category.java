@@ -5,6 +5,8 @@ public class Category {
 	private String categoryName;
 	private String status;
 	
+	
+	
 	public void setCategoryId(int categoryId)
 	{
 		this.categoryId=categoryId;
@@ -18,7 +20,7 @@ public class Category {
 	{
 		this.categoryName=categoryName;
 	}
-	public String getcategoryName()
+	public String getCategoryName()
 	{
 		return categoryName;
 	}

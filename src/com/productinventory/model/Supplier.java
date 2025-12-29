@@ -53,7 +53,7 @@ public class Supplier {
 		return status;
 	}
 	
-	public void setCreateAt(LocalDateTime createdAt)
+	public void setCreatedAt(LocalDateTime createdAt)
 	{
 		this.createdAt=createdAt;
 	}
@@ -61,10 +61,10 @@ public class Supplier {
 	{
 		return createdAt;
 	}
-	
+	@Override
 	public String toString()
 	{
-		return "Supplier Id: "+supplierId+" Name: "+name+"Email Address: "+emailAddress+"Phone No: "+phno
-				+"Status: "+status+"created At: "+createdAt;
+		return "Supplier Id: "+supplierId+" Name: "+name+" Email Address: "+emailAddress+" Phone No: "+phno
+				+" Status: "+status+" created At: "+createdAt;
 	}
 }

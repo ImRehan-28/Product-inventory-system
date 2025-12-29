@@ -6,9 +6,9 @@ public class Product
 	private double quantity;
 	private double price;
 	private int supplierId;
-	private boolean status;
+	private String status;
 	
-	Product(int productId,String productName,double quantity,double price,int supplierId,boolean status)
+	public Product(int productId,String productName,double quantity,double price,int supplierId,String status)
 	{
 		setProductId(productId);
 		setProductName(productName);
@@ -16,6 +16,10 @@ public class Product
 		setPrice(price);
 		setSupplierId(supplierId);
 		setStatus(status);
+	}
+	public Product()
+	{
+		
 	}
 	
 	public void setProductId(int productId)
@@ -38,7 +42,7 @@ public class Product
 	{
 		this.supplierId=supplierId;
 	}
-	public void setStatus(boolean status)
+	public void setStatus(String status)
 	{
 		this.status=status;
 	}
@@ -63,7 +67,7 @@ public class Product
 	{
 		return supplierId;
 	}
-	public boolean getStatus()
+	public String getStatus()
 	{
 		return status;
 	}
@@ -71,6 +75,6 @@ public class Product
 	@Override
 	public String toString()
 	{
-		return "Product Name: "+productName+" Product Id: "+productId+" Quantity: "+quantity+" Price: "+price+" Status: "+status;
+		return "Product Name: "+productName+" Product Id: "+productId+" Quantity: "+quantity+" Price: "+price+" Status: "+status+" Supplier Id: "+supplierId;
 	}
 }
