@@ -10,3 +10,5 @@ public interface ProductDAO{
 	public Product getProductById(int productId);
 	List<Product> getAllProducts();
 }
+//CategoryDAO
+//StockDAO
