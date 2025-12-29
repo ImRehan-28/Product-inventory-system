@@ -6,8 +6,8 @@ import com.productinventory.model.User;
 public interface UserDAO {
 	
 	boolean addUser(User user);
-	boolean UpdateUser(User user);
+	boolean updateUser(User user);
 	boolean deleteUser(int userId);
-	User getUserId(int userId);
+	User getUserById(int userId);
 	List<User> getAllUsers();
 }
