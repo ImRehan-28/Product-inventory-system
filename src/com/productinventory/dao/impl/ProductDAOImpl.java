@@ -14,7 +14,7 @@ import com.productinventory.util.DBConnection;
 public class ProductDAOImpl implements ProductDAO {
 
     private static final String INSERT_PRODUCT =
-        "INSERT INTO product (product_id, name, price, status) VALUES (?, ?, ?, ?)";
+        "INSERT INTO product (product_id, product_name, price,quantity, status) VALUES (?, ?, ?, ?, ?)";
 
     private static final String SELECT_BY_ID =
         "SELECT * FROM product WHERE product_id = ?";
@@ -23,7 +23,8 @@ public class ProductDAOImpl implements ProductDAO {
         "SELECT * FROM product";
 
     private static final String UPDATE_PRODUCT =
-        "UPDATE product SET name=?, price=?, status=? WHERE product_id=?";
+    	    "UPDATE product SET product_name=?, price=?, status=? WHERE product_id=?";
+
 
     private static final String DELETE_PRODUCT =
         "DELETE FROM product WHERE product_id=?";
@@ -37,7 +38,8 @@ public class ProductDAOImpl implements ProductDAO {
             ps.setInt(1, product.getProductId());
             ps.setString(2, product.getProductName());
             ps.setDouble(3, product.getPrice());
-            ps.setString(4, product.getStatus());
+            ps.setDouble(4, product.getQuantity());
+            ps.setString(5, product.getStatus());
 
             return ps.executeUpdate() > 0;
 
@@ -92,7 +94,7 @@ public class ProductDAOImpl implements ProductDAO {
             if (rs.next()) {
                 product = new Product();
                 product.setProductId(rs.getInt("product_id"));
-                product.setProductName(rs.getString("name"));
+                product.setProductName(rs.getString("product_Name"));
                 product.setPrice(rs.getDouble("price"));
                 product.setStatus(rs.getString("status"));
             }
@@ -114,7 +116,7 @@ public class ProductDAOImpl implements ProductDAO {
             while (rs.next()) {
                 Product product = new Product();
                 product.setProductId(rs.getInt("product_id"));
-                product.setProductName(rs.getString("name"));
+                product.setProductName(rs.getString("product_name"));
                 product.setPrice(rs.getDouble("price"));
                 product.setStatus(rs.getString("status"));
                 products.add(product);
